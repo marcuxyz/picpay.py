@@ -30,8 +30,8 @@ class Downloader:
 
         return ResponseErrror(
             message=response.json()["message"],
-            errors=response.json().get("errors", {}), 
-            status_code=response.status_code
+            errors=response.json().get("errors", {}),
+            status_code=response.status_code,
         )
 
     def close(self):
