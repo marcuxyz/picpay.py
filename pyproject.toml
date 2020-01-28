@@ -2,6 +2,10 @@
 name = "python-picpay"
 version = "1.0.0"
 description = ""
+homepage = "https://github.com/MarcusMann/python-picpay"
+repository = "https://github.com/MarcusMann/python-picpay"
+license = "MIT"
+keywords = ["picpay", "gateway de pagamento", "loja virtual", "ecommerce", "pagseguro"]
 authors = ["Marcus Pereira <contato@spacedevs.com.br>"]
 
 [tool.poetry.dependencies]
