@@ -22,3 +22,7 @@ snapshots['test_get_status 1'] = {
     'referenceId': '11111',
     'status': 'refunded'
 }
+
+snapshots['test_cancel_payment 1'] = {
+    'message': 'Transação já foi cancelada'
+}

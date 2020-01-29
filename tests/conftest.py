@@ -19,3 +19,8 @@ def get_status_result():
         "status": "refunded",
         "authorizationId": "5c8e4c711c7e4c8d21b1",
     }
+
+
+@pytest.fixture(scope="module")
+def get_cancel_payment_result():
+    return {"message": "Transação já foi cancelada"}

@@ -45,3 +45,21 @@ def test_get_status(mock_downloader, get_status_result, snapshot):
     response = picpay.get_status(referenceId)
 
     snapshot.assert_match(response.json)
+
+
+@mock.patch("python_picpay.Downloader")
+def test_cancel_payment(mock_downloader, get_cancel_payment_result, snapshot):
+    referenceId = "11111"
+    authorizationId = "2ce49cu917a8ci10cn"
+
+    token = "some things..."
+
+    mock_downloader.return_value.post.return_value = mock.Mock(
+        json=get_cancel_payment_result
+    )
+
+    # get cancel payment...
+    picpay = Picpay(token)
+    response = picpay.cancel_payment(referenceId, authorizationId)
+
+    snapshot.assert_match(response.json)
