@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/MarcusMann/python-picpay.svg?branch=master)](https://travis-ci.org/MarcusMann/python-picpay) ![GitHub](https://img.shields.io/github/license/marcusmann/python-picpay) ![GitHub top language](https://img.shields.io/github/languages/top/marcusmann/python-picpay) ![Coveralls github branch](https://img.shields.io/coveralls/github/marcusmann/python-picpay/master) ![GitHub All Releases](https://img.shields.io/github/downloads/marcusmann/python-picpay/total)
+[![Build Status](https://travis-ci.org/MarcusMann/python-picpay.svg?branch=master)](https://travis-ci.org/MarcusMann/python-picpay) ![GitHub](https://img.shields.io/github/license/marcusmann/python-picpay) ![GitHub top language](https://img.shields.io/github/languages/top/marcusmann/python-picpay) [![Coverage Status](https://coveralls.io/repos/github/MarcusMann/python-picpay/badge.svg?branch=master)](https://coveralls.io/github/MarcusMann/python-picpay?branch=master) ![GitHub All Releases](https://img.shields.io/github/downloads/marcusmann/python-picpay/total)
  ![GitHub issues](https://img.shields.io/github/issues/marcusmann/python-picpay)
 
 # Python Picpay

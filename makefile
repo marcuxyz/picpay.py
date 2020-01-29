@@ -1,6 +1,10 @@
 .PHONY: test
-test:
+test: testcov
 	@pytest ./tests -vv
+
+.PHONY: testcov
+testcov:
+	@pytest --cov=python_picpay tests/
 
 .PHONY: format
 format:
