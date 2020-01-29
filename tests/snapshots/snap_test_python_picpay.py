@@ -16,3 +16,9 @@ snapshots['test_payment 1'] = {
     },
     'referenceId': '4878711'
 }
+
+snapshots['test_get_status 1'] = {
+    'authorizationId': '5c8e4c711c7e4c8d21b1',
+    'referenceId': '11111',
+    'status': 'refunded'
+}
