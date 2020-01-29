@@ -1,14 +1,15 @@
 .PHONY: test
-test: check
-	pytest ./tests -vv
+test:
+	@pytest ./tests -vv
 
 .PHONY: format
 format:
-	black python_picpay/
+	@black python_picpay/
 
 .PHONY: check
 check:
-	black --check python_picpay/
+	@black --check python_picpay/
+	@flake8 python_picpay/
 
 .PHONY: clean-pyc clean-build clean
 clean: clean-build clean-pyc
