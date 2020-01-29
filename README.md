@@ -1,3 +1,6 @@
+![GitHub](https://img.shields.io/github/license/marcusmann/python-picpay) ![GitHub top language](https://img.shields.io/github/languages/top/marcusmann/python-picpay) ![Coveralls github branch](https://img.shields.io/coveralls/github/marcusmann/python-picpay/master) ![GitHub All Releases](https://img.shields.io/github/downloads/marcusmann/python-picpay/total)
+ ![GitHub issues](https://img.shields.io/github/issues/marcusmann/python-picpay)
+
 # Python Picpay
 
 **Python-Picpay** é um package (pacote) que integra bem com a api do [picpay](https://ecommerce.picpay.com/doc/). Com este pacote, podemos criar facilmente pagamentos, cancelá-los e sermos notificados quando houver uma mudança no status do pagamento.
