@@ -20,7 +20,7 @@ class Picpay:
     def payment(self, payment_data: dict):
         url = urljoin(PICPAY_DEFAULT_URL, "payments")
 
-        response = Downloader().post(
+        response = self.downloader.post(
             url, data=json.dumps(payment_data), headers=self.headers
         )
 
