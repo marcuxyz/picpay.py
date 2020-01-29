@@ -8,8 +8,6 @@
 ## Instalação
 Para instalar o python-picpay é muito fácil, pois, ele está localizado no [Pypi](https://pypi.org/project/python-picpay/).  Para instalar você pode executar o seguinte comando em seu terminal:
 
-Para instalar você pode usar o comando em seu terminal:
-
 ```bash
 $ pip install python-picpay
 ```
