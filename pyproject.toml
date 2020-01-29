@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-picpay"
-version = "1.0.0"
+version = "1.1.0"
 description = ""
 homepage = "https://github.com/MarcusMann/python-picpay"
 repository = "https://github.com/MarcusMann/python-picpay"
