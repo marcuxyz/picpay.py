@@ -18,18 +18,18 @@ class Picpay:
         self.downloader = Downloader()
 
     def payment(self, payment_data: dict):
-        payment_url = urljoin(PICPAY_DEFAULT_URL, "payments")
+        url = urljoin(PICPAY_DEFAULT_URL, "payments")
 
         response = Downloader().post(
-            payment_url, data=json.dumps(payment_data), headers=self.headers
+            url, data=json.dumps(payment_data), headers=self.headers
         )
 
         return response
 
     def get_status(self, referenceId: str):
-        status_url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/status")
+        url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/status")
 
-        return self.downloader.get(status_url, headers=self.headers)
+        return self.downloader.get(url, headers=self.headers)
 
     def cancel_payment(self, referenceId: str, authorizationId: str):
         url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/cancellations")
