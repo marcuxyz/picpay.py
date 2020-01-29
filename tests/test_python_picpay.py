@@ -24,10 +24,10 @@ def test_payment(mock_downloader, payment_result, snapshot):
     }
     token = "some things..."
 
-    mock_downloader.return_value.post.return_value = mock.Mock(result=payment_result)
+    mock_downloader.return_value.post.return_value = mock.Mock(json=payment_result)
 
     # get payment...
     picpay = Picpay(token)
     response = picpay.payment(data_mock)
 
-    snapshot.assert_match(response.result)
+    snapshot.assert_match(response.json)
