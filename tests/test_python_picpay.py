@@ -31,3 +31,17 @@ def test_payment(mock_downloader, payment_result, snapshot):
     response = picpay.payment(data_mock)
 
     snapshot.assert_match(response.json)
+
+
+@mock.patch("python_picpay.Downloader")
+def test_get_status(mock_downloader, get_status_result, snapshot):
+    referenceId = "11111"
+    token = "some things..."
+
+    mock_downloader.return_value.get.return_value = mock.Mock(json=get_status_result)
+
+    # get status of payment...
+    picpay = Picpay(token)
+    response = picpay.get_status(referenceId)
+
+    snapshot.assert_match(response.json)

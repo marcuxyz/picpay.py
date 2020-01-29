@@ -15,6 +15,7 @@ class Picpay:
             "Content-Type": "application/json",
             "x-picpay-token": self.token,
         }
+        self.downloader = Downloader()
 
     def payment(self, payment_data: dict):
         payment_url = urljoin(PICPAY_DEFAULT_URL, "payments")
@@ -24,3 +25,8 @@ class Picpay:
         )
 
         return response
+
+    def get_status(self, referenceId: str):
+        status_url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/status")
+
+        return self.downloader.get(status_url, headers=self.headers)
