@@ -30,3 +30,14 @@ class Picpay:
         status_url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/status")
 
         return self.downloader.get(status_url, headers=self.headers)
+
+    def cancel_payment(self, referenceId: str, authorizationId: str):
+        url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/cancellations")
+
+        response = self.downloader.post(
+            url,
+            data=json.dumps({"authorizationId": authorizationId}),
+            headers=self.headers,
+        )
+
+        return response
