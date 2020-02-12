@@ -4,7 +4,7 @@ from picpay.__version__ import __version__
 
 
 def test_version():
-    assert __version__ == "1.1.0"
+    assert __version__ == "1.1.1"
 
 
 @mock.patch("picpay.picpay.Downloader")

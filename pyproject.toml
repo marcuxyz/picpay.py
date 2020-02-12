@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "picpay"
-version = "1.1.0"
+version = "1.1.1"
 description = ""
-homepage = "https://github.com/MarcusMann/picpay"
-repository = "https://github.com/MarcusMann/picpay"
+homepage = "https://github.com/MarcusMann/picpay.py"
+repository = "https://github.com/MarcusMann/picpay.py"
 license = "MIT"
 keywords = ["picpay", "gateway de pagamento", "loja virtual", "ecommerce", "pagseguro"]
-authors = ["Marcus Pereira <contato@spacedevs.com.br>"]
+authors = ["Marcus Pereira <oi@spacedevs.com.br>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
