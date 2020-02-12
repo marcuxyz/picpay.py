@@ -13,49 +13,7 @@ $ pip install picpay
 ```
 
 ## Como usar
-Antes de começar, você deve importar a class `Picpay` veja:
-```python
-from picpay import Picpay
-```
-
-Agora, você pode compor os dados do envio do pagamento, veja:
-
-```python
-payment_data = {
-	"referenceId": "21144", # código do produto
-	"callbackUrl": "https://seusite.com.br/callback",
-	"returnUrl": "https://seusite.com.br/cliente/pedido/21144", 
-	"value": 99.90, # preço do produto
-	"expiresAt": "2022-05-01T16:00:00-03:00",
-	"buyer": {
-		"firstName": "Jose", # primeiro nome do comprador
-		"lastName": "Santos", # sobrenome do comprador
-		"document": "182.255.879-55", # cpf do comprador
-		"email": "email_do_comprador@email.com",
-		"phone": "+55 71 91111-1111",
-	},
-}
-```
-Atenção: Para entender melhor o que cada parâmetro desse significa, clique [aqui](https://ecommerce.picpay.com/doc/#tag/Requisicao-de-Pagamento) para ver a documentação oficial do picpay.
-
-Logo em seguida crie um token, este token é necessário para que a picpay saiba que você é realmente você. Para obter o token, acesse sua conta de lojista.
-
-https://lojista.picpay.com/ecommerce-token
-
-```python
-token = "seu_token"
-```
-E então, crie o pagamento...
-
-```
-picpay = Picpay(token)
-response = picpay.payment(payment_data)
-```
-Você pode ver a resposta da requisição dando um print no response:
-
-```python
-print(response)`
-```
+Para obter informações de como utilizar a lib, você pode ver a documentação clicando [aqui](https://mpereirassa.gitbook.io/picpay-py/)
 
 
 ## Testando a biblioteca
