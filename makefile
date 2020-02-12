@@ -4,16 +4,16 @@ test: testcov
 
 .PHONY: testcov
 testcov:
-	@pytest --cov=python_picpay tests/
+	@pytest --cov=picpay tests/
 
 .PHONY: format
 format:
-	@black python_picpay/
+	@black picpay/
 
 .PHONY: check
 check:
-	@black --check python_picpay/
-	@flake8 python_picpay/
+	@black --check picpay/
+	@flake8 picpay/
 
 .PHONY: clean-pyc clean-build clean
 clean: clean-build clean-pyc
