@@ -6,16 +6,16 @@
 **Python-Picpay** é um package (pacote) que integra bem com a api do [picpay](https://ecommerce.picpay.com/doc/). Com este pacote, podemos criar facilmente pagamentos, cancelá-los e sermos notificados quando houver uma mudança no status do pagamento.
 
 ## Instalação
-Para instalar o python-picpay é muito fácil, pois, ele está localizado no [Pypi](https://pypi.org/project/python-picpay/).  Para instalar você pode executar o seguinte comando em seu terminal:
+Para instalar o python-picpay é muito fácil, pois, ele está localizado no [Pypi](https://pypi.org/project/picpay/).  Para instalar você pode executar o seguinte comando em seu terminal:
 
 ```bash
-$ pip install python-picpay
+$ pip install picpay
 ```
 
 ## Como usar
 Antes de começar, você deve importar a class `Picpay` veja:
 ```python
-from python_picpay import Picpay
+from picpay import Picpay
 ```
 
 Agora, você pode compor os dados do envio do pagamento, veja:
@@ -24,7 +24,7 @@ Agora, você pode compor os dados do envio do pagamento, veja:
 payment_data = {
 	"referenceId": "21144", # código do produto
 	"callbackUrl": "https://seusite.com.br/callback",
-	"returnUrl": "https://spacedevs.com.br/cliente/pedido/21144", 
+	"returnUrl": "https://seusite.com.br/cliente/pedido/21144", 
 	"value": 99.90, # preço do produto
 	"expiresAt": "2022-05-01T16:00:00-03:00",
 	"buyer": {
