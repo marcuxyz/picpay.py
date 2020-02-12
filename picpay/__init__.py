@@ -1,2 +1,1 @@
-
-from .picpay import Picpay
+from .picpay import Picpay  # noqa
