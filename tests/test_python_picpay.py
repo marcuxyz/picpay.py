@@ -1,12 +1,13 @@
 from unittest import mock
-from python_picpay import Picpay, __version__
+from picpay import Picpay
+from picpay.__version__ import __version__
 
 
 def test_version():
     assert __version__ == "1.1.0"
 
 
-@mock.patch("python_picpay.Downloader")
+@mock.patch("picpay.picpay.Downloader")
 def test_payment(mock_downloader, payment_result, snapshot):
     data_mock = {
         "referenceId": "4878711",
@@ -33,7 +34,7 @@ def test_payment(mock_downloader, payment_result, snapshot):
     snapshot.assert_match(response.json)
 
 
-@mock.patch("python_picpay.Downloader")
+@mock.patch("picpay.picpay.Downloader")
 def test_get_status(mock_downloader, get_status_result, snapshot):
     referenceId = "11111"
     token = "some things..."
@@ -47,7 +48,7 @@ def test_get_status(mock_downloader, get_status_result, snapshot):
     snapshot.assert_match(response.json)
 
 
-@mock.patch("python_picpay.Downloader")
+@mock.patch("picpay.picpay.Downloader")
 def test_cancel_payment(mock_downloader, get_cancel_payment_result, snapshot):
     referenceId = "11111"
     authorizationId = "2ce49cu917a8ci10cn"
