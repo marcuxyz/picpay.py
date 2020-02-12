@@ -13,7 +13,7 @@ $ pip install picpay
 ```
 
 ## Como usar
-Para obter informações de como utilizar a lib, você pode ver a documentação clicando [aqui](https://mpereirassa.gitbook.io/picpay-py/)
+Para obter informações de como utilizar a lib, você pode ver a documentação clicando [aqui](https://mpereirassa.gitbook.io/picpay-py/).
 
 
 ## Testando a biblioteca
