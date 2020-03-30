@@ -14,10 +14,7 @@ class Downloader:
         return self.sess.post(url, data=data, params=params)
 
     async def get_async(self, url, params=None, headers=None) -> Response:
-        response = await self.sess_async.get(url, params=params)
-        return response
+        return await self.sess_async.get(url, params=params)
 
     async def post_async(self, url, data=None, params=None, headers=None) -> Response:
-        response = await self.sess_async.post(url, data=data, params=params)
-
-        return response
+        return await self.sess_async.post(url, data=data, params=params)
