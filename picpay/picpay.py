@@ -3,39 +3,40 @@ from urllib.parse import urljoin
 
 from .download import Downloader
 
-PICPAY_DEFAULT_URL = "https://appws.picpay.com/ecommerce/public/"
+PICPAY_URL = "https://appws.picpay.com/ecommerce/public/payments/"
+CANCEL_URL = urljoin(PICPAY_URL, "{}/cancellations")
+STATUS_URL = urljoin(PICPAY_URL, "{}/status")
 
 
 class Picpay:
     def __init__(self, token: str):
-        self.token = token
-        self.headers = {
+        _headers = {
             "Content-Type": "application/json",
-            "x-picpay-token": self.token,
+            "x-picpay-token": token,
         }
-        self.downloader = Downloader()
+        self.downloader = Downloader(_headers)
 
     def payment(self, payment_data: dict):
-        url = urljoin(PICPAY_DEFAULT_URL, "payments")
-
-        response = self.downloader.post(
-            url, data=json.dumps(payment_data), headers=self.headers
-        )
-
+        response = self.downloader.post(PICPAY_URL, data=json.dumps(payment_data))
         return response
 
-    def get_status(self, referenceId: str):
-        url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/status")
-
-        return self.downloader.get(url, headers=self.headers)
-
-    def cancel_payment(self, referenceId: str, authorizationId: str):
-        url = urljoin(PICPAY_DEFAULT_URL, f"payments/{referenceId}/cancellations")
-
-        response = self.downloader.post(
-            url,
-            data=json.dumps({"authorizationId": authorizationId}),
-            headers=self.headers,
+    async def payment_async(self, payment_data: dict):
+        return await self.downloader.post_async(
+            PICPAY_URL, data=json.dumps(payment_data)
         )
 
-        return response
+    def get_status(self, reference_id: str):
+        return self.downloader.get(STATUS_URL.format(reference_id))
+
+    async def get_status_async(self, reference_id: str):
+        return await self.downloader.get_async(STATUS_URL.format(reference_id))
+
+    def cancel_payment(self, reference_id: str, authorization_id: str):
+        data = json.dumps({"authorizationId": authorization_id})
+        return self.downloader.post(CANCEL_URL.format(reference_id), data=data)
+
+    async def cancel_payment_async(self, reference_id: str, authorization_id: str):
+        data = json.dumps({"authorizationId": authorization_id})
+        return await self.downloader.post_async(
+            CANCEL_URL.format(reference_id), data=data
+        )
