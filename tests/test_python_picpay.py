@@ -60,13 +60,14 @@ def test_cancel_payment(mock_downloader, get_cancel_payment_result, snapshot):
     response = picpay.cancel_payment("102030", "5c8e4c711c7e4c8d21b1")
     snapshot.assert_match(response.json)
 
+
 @pytest.mark.asyncio
 @mock.patch("picpay.picpay.Downloader", new_callable=mock.AsyncMock)
-async def test_cancel_payment_async(mock_downloader, get_cancel_payment_result, snapshot):
+async def test_cancel_payment_async(
+    mock_downloader, get_cancel_payment_result, snapshot
+):
     downloader = mock_downloader.return_value
-    downloader.post_async.return_value = mock.AsyncMock(
-        json=get_cancel_payment_result
-    )
+    downloader.post_async.return_value = mock.AsyncMock(json=get_cancel_payment_result)
     picpay = Picpay("some things...")
     picpay.downloader = downloader
     response = await picpay.cancel_payment_async("102030", "5c8e4c711c7e4c8d21b1")
