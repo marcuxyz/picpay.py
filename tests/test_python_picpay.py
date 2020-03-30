@@ -1,4 +1,7 @@
 from unittest import mock
+
+import pytest
+
 from picpay import Picpay
 from picpay.__version__ import __version__
 
@@ -50,17 +53,21 @@ def test_get_status(mock_downloader, get_status_result, snapshot):
 
 @mock.patch("picpay.picpay.Downloader")
 def test_cancel_payment(mock_downloader, get_cancel_payment_result, snapshot):
-    referenceId = "11111"
-    authorizationId = "2ce49cu917a8ci10cn"
-
-    token = "some things..."
-
     mock_downloader.return_value.post.return_value = mock.Mock(
         json=get_cancel_payment_result
     )
+    picpay = Picpay("some things...")
+    response = picpay.cancel_payment("102030", "5c8e4c711c7e4c8d21b1")
+    snapshot.assert_match(response.json)
 
-    # get cancel payment...
-    picpay = Picpay(token)
-    response = picpay.cancel_payment(referenceId, authorizationId)
-
+@pytest.mark.asyncio
+@mock.patch("picpay.picpay.Downloader", new_callable=mock.AsyncMock)
+async def test_cancel_payment_async(mock_downloader, get_cancel_payment_result, snapshot):
+    downloader = mock_downloader.return_value
+    downloader.post_async.return_value = mock.AsyncMock(
+        json=get_cancel_payment_result
+    )
+    picpay = Picpay("some things...")
+    picpay.downloader = downloader
+    response = await picpay.cancel_payment_async("102030", "5c8e4c711c7e4c8d21b1")
     snapshot.assert_match(response.json)

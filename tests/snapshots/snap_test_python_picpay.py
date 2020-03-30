@@ -24,5 +24,11 @@ snapshots['test_get_status 1'] = {
 }
 
 snapshots['test_cancel_payment 1'] = {
-    'message': 'Transação já foi cancelada'
+    'cancellationId': '5b008cef7f321d00ef236444',
+    'referenceId': '102030'
+}
+
+snapshots['test_cancel_payment_async 1'] = {
+    'cancellationId': '5b008cef7f321d00ef236444',
+    'referenceId': '102030'
 }

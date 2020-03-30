@@ -1,15 +1,10 @@
 import pytest
-import json
-
-
-def load_json_file(name: str):
-    with open(f"tests/mocks/{name}.json", "r") as f:
-        return json.loads(f.read())
+from tests.util import loadmock
 
 
 @pytest.fixture(scope="module")
 def payment_result():
-    return load_json_file("payment_result")
+    return loadmock("payment_result.json")
 
 
 @pytest.fixture(scope="module")
@@ -23,4 +18,4 @@ def get_status_result():
 
 @pytest.fixture(scope="module")
 def get_cancel_payment_result():
-    return {"message": "Transação já foi cancelada"}
+    return loadmock("cancel/cancel_result.json")
