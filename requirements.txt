@@ -5,5 +5,5 @@ flake8==3.7.9
 pytest==5.3.4
 pytest-cov==2.8.1
 snapshottest==0.5.1
-httpx==0.12.1
+httpx==0.23.0
 pytest-asyncio==0.10.0
