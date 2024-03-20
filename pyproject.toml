@@ -15,7 +15,7 @@ requests = "^2.22.0"
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 flake8 = "^3.7.9"
-black = "^19.10b0"
+black = "^24.3"
 snapshottest = "^0.5.1"
 pytest-cov = "^2.8.1"
 coveralls = "^1.10.0"
